@@ -4,12 +4,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  ClerkProvider
 } from '@clerk/nextjs'
 import { dark } from '@clerk/themes';
 
@@ -40,7 +35,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange>        
             {/* header */}
-            <Header/>
+            <Header />
             <main className="min-h-screen">
               {children}
             </main>
