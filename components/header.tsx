@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link"
 import * as React from "react"
@@ -21,7 +21,6 @@ const Header = () => {
                     <SignInButton>
                         <Button variant="secondary">Sign In</Button>
                     </SignInButton>
-                    <SignUpButton />
                 </SignedOut>
                 <SignedIn>
                     <UserButton
