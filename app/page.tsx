@@ -18,9 +18,12 @@ import {
 export default function Home() {
 
   const cardData = [
-    { title: "Create Your Profile", content: "Sign up and complete your profile to get personalized healthcare recommendations and services." },
-    { title: "Book Appointments", content: "Browse doctor profiles, check availability, and book appointments that fit your schedule." },
-    { title: "Video Consultation", content: "Connect with doctors through secure, high-quality video consultations from the comfort of your home." },
+    { icon: <User className="h-6 w-6 text-emerald-400" />, title: "Create Your Profile", content: "Sign up and complete your profile to get personalized healthcare recommendations and services." },
+    { icon: <Calendar className="h-6 w-6 text-emerald-400" />, title: "Book Appointments", content: "Browse doctor profiles, check availability, and book appointments that fit your schedule." },
+    { icon: <Video className="h-6 w-6 text-emerald-400" />, title: "Video Consultation", content: "Connect with doctors through secure, high-quality video consultations from the comfort of your home." },
+    { icon: <CreditCard className="h-6 w-6 text-emerald-400" />, title: "Consultation Credits", content: "Purchase credit packages that fit your healthcare needs with our simple subscription model." },
+    { icon: <ShieldCheck className="h-6 w-6 text-emerald-400" />, title: "Verified Doctors", content: "All healthcare providers are carefully vetted and verified to ensure quality care." },
+    { icon: <FileText className="h-6 w-6 text-emerald-400" />, title: "Medical Documentation", content: "Access and manage your appointment history, doctor's notes, and medical recommendations." },
   ]
 
   return (
@@ -93,7 +96,7 @@ export default function Home() {
               <Card key={index}>
                 <CardHeader>
                   <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
-                    <User className="h-6 w-6 text-emerald-400"></User>
+                    {data.icon}
                   </div>
                   <CardTitle>{data.title}</CardTitle>
                   <CardAction></CardAction>
