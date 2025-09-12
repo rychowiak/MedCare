@@ -233,7 +233,7 @@ export default function Home() {
               Success Stories
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              How It Works
+              What Our Users Say
             </h2>
             <p className="text-muted-foreground text-lg max-w-2x1 mx-auto">
               Hear from patients and doctors who use our platform
@@ -242,15 +242,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((data, index) => {
               return (
-                <Card key={index} className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300">
+                <Card
+                  key={index}
+                  className="border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
+                >
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center mr-4">
-                        <span className="text-emerald-400 font-bold">{data.initials}</span>
+                        <span className="text-emerald-400 font-bold">
+                          {data.initials}
+                        </span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white">{data.name}</h4>
-                        <p className="text-sm text-muted-foreground">{data.role}</p>
+                        <h4 className="font-semibold text-white">
+                          {data.name}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {data.role}
+                        </p>
                       </div>
                     </div>
                     <p className="text-muted-foreground">
@@ -261,6 +270,39 @@ export default function Home() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/30">
+            <CardContent className="p-8 md:p-12 lg:p-16 relative overflow-hidden">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
+                  quas deserunt recusandae ea dolore natus. Officiis eius,
+                  facilis aut et sunt consequuntur fugit, ab quasi minima,
+                  laborum praesentium illo error.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button 
+                    size={"lg"}
+                    className="bg-emerald-600 text-white hover:bg-emerald-700"
+                    asChild
+                  >
+                    <Link href={"/sign-up"}>Sign up now</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant={"outline"}
+                  >
+                    <Link href={"/pricing"}>View Pricing</Link>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
