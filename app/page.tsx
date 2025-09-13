@@ -278,7 +278,9 @@ export default function Home() {
           <Card className="bg-gradient-to-r from-emerald-900/30 to-emerald-950/20 border-emerald-800/30">
             <CardContent className="p-8 md:p-12 lg:p-16 relative overflow-hidden">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing?
+                </h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
                   quas deserunt recusandae ea dolore natus. Officiis eius,
@@ -286,17 +288,14 @@ export default function Home() {
                   laborum praesentium illo error.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
+                  <Button
                     size={"lg"}
                     className="bg-emerald-600 text-white hover:bg-emerald-700"
                     asChild
                   >
                     <Link href={"/sign-up"}>Sign up now</Link>
                   </Button>
-                  <Button
-                    asChild
-                    variant={"outline"}
-                  >
+                  <Button asChild variant={"outline"}>
                     <Link href={"/pricing"}>View Pricing</Link>
                   </Button>
                 </div>

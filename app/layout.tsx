@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import {
-  ClerkProvider
-} from '@clerk/nextjs'
-import { dark } from '@clerk/themes';
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 const fontSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "MediCare",
-  description: "Medical Appointment",
+  description: "A healthcare management system",
 };
 
 export default function RootLayout({
@@ -24,21 +23,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{
-      baseTheme: dark,
-    }}>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
-        <body className={`${fontSans.variable} antialiased`} >
-          <ThemeProvider 
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange>        
+        <body className={`${fontSans.variable} antialiased min-h-screen`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
             {/* header */}
             <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
+            <main className="min-h-screen">{children}</main>
 
             {/* footer */}
             <footer className="bg-muted/50 py-12">
@@ -46,7 +46,7 @@ export default function RootLayout({
                 <p>MediCare</p>
               </div>
             </footer>
-            </ThemeProvider>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
